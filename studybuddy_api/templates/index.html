@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>StudyBuddy</title>
+</head>
+<body>
+    <h1>🧠 Bienvenue dans StudyBuddy</h1>
+
+    <h2>Ajouter un rappel</h2>
+    <form action="/add_rappel" method="post">
+        Texte : <input type="text" name="texte" required>
+        Date : <input type="date" name="date" required>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <h2>Ajouter un rendez-vous</h2>
+    <form action="/add_event" method="post">
+        Titre : <input type="text" name="titre" required>
+        Date : <input type="date" name="date" required>
+        Heure : <input type="time" name="heure" required>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <h2>Poser une question</h2>
+    <form action="/ask" method="post">
+        <input type="text" name="question" placeholder="Ex : Donne-moi une motivation..." required>
+        <button type="submit">Demander</button>
+    </form>
+
+    {% if reponse %}
+        <p><strong>Réponse :</strong> {{ reponse }}</p>
+    {% endif %}
+
+    <h2>📌 Rappels</h2>
+    <ul>
+        {% for texte, date in rappels %}
+            <li>{{ texte }} (le {{ date }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>📅 Rendez-vous</h2>
+    <ul>
+        {% for titre, date, heure in events %}
+            <li>{{ titre }} – le {{ date }} à {{ heure }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
