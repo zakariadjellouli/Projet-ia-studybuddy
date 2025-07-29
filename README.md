@@ -121,9 +121,121 @@ def main():
 if __name__ == "__main__":
     main()
 ````
-
 ---
+# 💻 Classe Agent 
 
+```python
+from memoire import Memoire
+
+class Agent:
+    def __init__(self, nom):
+        self.nom = nom
+        self.memoire = Memoire()
+
+    def ajouter_rappel(self, texte, date):
+        self.memoire.ajouter(texte, date)
+
+    def afficher_rappels(self):
+        return self.memoire.lister()
+
+    def repondre_question(self, question):
+        if "motivation" in question.lower():
+            return "Tu peux le faire ! N’abandonne jamais 💪"
+        else:
+            return "Je ne connais pas encore la réponse à cette question."
+
+````
+# 💻 Classe Memoire 
+
+```python
+from database import insert_rappel, get_rappels, insert_event, get_events
+
+class Memoire:
+    def ajouter(self, texte, date):
+        insert_rappel(texte, date)
+
+    def lister(self):
+        return get_rappels()
+
+    def ajouter_evenement(self, titre, date, heure):
+        insert_event(titre, date, heure)
+
+    def lister_evenements(self):
+        return get_events()
+
+````
+# 💻 Classe Rappel 
+
+```python
+class Rappel:
+    def __init__(self, texte, date):
+        self.texte = texte
+        self.date = date
+
+````
+# 💻 Classe Database 
+
+```python
+import sqlite3
+
+def init_db():
+    conn = sqlite3.connect("studybuddy.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS rappels (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            texte TEXT NOT NULL,
+            date TEXT NOT NULL
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+def insert_rappel(texte, date):
+    conn = sqlite3.connect("studybuddy.db")
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO rappels (texte, date) VALUES (?, ?)", (texte, date))
+    conn.commit()
+    conn.close()
+
+def get_rappels():
+    conn = sqlite3.connect("studybuddy.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT texte, date FROM rappels")
+    rappels = cursor.fetchall()
+    conn.close()
+    return rappels
+
+def init_events():
+    conn = sqlite3.connect("studybuddy.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS evenements (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            titre TEXT NOT NULL,
+            date TEXT NOT NULL,
+            heure TEXT NOT NULL
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+def insert_event(titre, date, heure):
+    conn = sqlite3.connect("studybuddy.db")
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO evenements (titre, date, heure) VALUES (?, ?, ?)", (titre, date, heure))
+    conn.commit()
+    conn.close()
+
+def get_events():
+    conn = sqlite3.connect("studybuddy.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT titre, date, heure FROM evenements ORDER BY date, heure")
+    events = cursor.fetchall()
+    conn.close()
+    return events
+
+````
 # 🖼️ Interface Web
 ## Version Flask
 - Formulaires pour :
