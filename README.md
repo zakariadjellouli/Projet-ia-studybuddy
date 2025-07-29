@@ -1,14 +1,9 @@
 # Projet-ia-studybuddy
-Voici un fichier `README.md` **complet**, prêt à être copié-collé dans ton dépôt GitHub `Projet-ia-studybuddy` :
 
----
-
-```markdown
 # 🎓 StudyBuddy – Agent Intelligent Étudiant (POO + Streamlit)
 
 Un assistant personnel intelligent 100% Python conçu pour aider les étudiants à mieux organiser leurs journées grâce à une gestion intelligente des rappels, des rendez-vous et des interactions de motivation.
 
----
 
 # 🎯 Objectifs du projet
 
@@ -18,11 +13,11 @@ Un assistant personnel intelligent 100% Python conçu pour aider les étudiants 
 - Gérer les rappels et événements à l’aide d’une base SQLite  
 - Créer un outil simple, utile et adapté à la vie étudiante  
 
----
+
 
 # 🏗️ Architecture du projet
 
-
+```
 
 ┌────────────────────┐      ┌────────────────────┐
 │    Interface Web   │◄────►│   Agent Intelligent │
@@ -34,10 +29,11 @@ Un assistant personnel intelligent 100% Python conçu pour aider les étudiants 
 │    Mémoire (POO)   │      │    Base SQLite     │
 └────────────────────┘      └────────────────────┘
 
-
+```
 
 # 📁 Structure du projet
 
+```
 studybuddy/
 ├── agent.py                 # Classe Agent (logique principale)
 ├── memoire.py              # Classe Mémoire (accès base de données)
@@ -49,7 +45,7 @@ studybuddy/
 │   └── index.html          # Template HTML pour Flask
 ├── studybuddy.db           # Base de données SQLite (auto-créée)
 └── README.md               # Documentation du projet
-
+```
 
 # 🔧 Fonctionnalités principales
 
@@ -60,7 +56,6 @@ studybuddy/
 - 💾 Stockage local avec SQLite  
 - 🖥️ Interface Web : Flask + Streamlit
 
----
 
 # 💻 Couche Data Manager (JSON) (`main.py`)
 
@@ -209,10 +204,9 @@ if events:
 else:
     st.info("Aucun événement enregistré.")
 
+```
 
----
-
-## 📊 Métriques du projet
+# 📊 Métriques du projet
 
 | Fichier                 | Lignes |
 | ----------------------- | ------ |
@@ -222,8 +216,6 @@ else:
 | interface\_streamlit.py | 65     |
 
 > ✅ Résultat : un code plus clair, maintenable et évolutif !
-
----
 
 # 🎓 Avantages Pédagogiques
 
