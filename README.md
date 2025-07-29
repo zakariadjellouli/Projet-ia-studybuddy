@@ -318,8 +318,8 @@ else:
 
 ```
 # ✅ Accès
--Interface Streamlit : http://localhost:8501
--API REST : http://127.0.0.1:5000 
+- Interface Streamlit : http://localhost:8501
+- API REST : http://127.0.0.1:5000 
 
 
 # 📊 Métriques du projet
