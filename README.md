@@ -10,7 +10,7 @@ Un assistant personnel intelligent 100% Python conçu pour aider les étudiants 
 
 ---
 
-## 🎯 Objectifs du projet
+# 🎯 Objectifs du projet
 
 - Appliquer les principes de la programmation orientée objet (POO) en Python  
 - Offrir une interface moderne avec Streamlit  
@@ -20,7 +20,7 @@ Un assistant personnel intelligent 100% Python conçu pour aider les étudiants 
 
 ---
 
-## 🏗️ Architecture du projet
+# 🏗️ Architecture du projet
 
 
 
@@ -36,7 +36,7 @@ Un assistant personnel intelligent 100% Python conçu pour aider les étudiants 
 
 
 
-## 📁 Structure du projet
+# 📁 Structure du projet
 
 studybuddy/
 ├── agent.py                 # Classe Agent (logique principale)
@@ -51,7 +51,7 @@ studybuddy/
 └── README.md               # Documentation du projet
 
 
-## 🔧 Fonctionnalités principales
+# 🔧 Fonctionnalités principales
 
 - 📝 Ajout de rappels personnalisés (texte + date)  
 - 📅 Planification d’événements (titre + date + heure)  
@@ -62,7 +62,7 @@ studybuddy/
 
 ---
 
-## 💻 Couche Data Manager (JSON) (`main.py`)
+# 💻 Couche Data Manager (JSON) (`main.py`)
 
 ```python
 from database import insert_event, get_events, init_events
@@ -129,7 +129,7 @@ if __name__ == "__main__":
 
 ---
 
-## 🖼️ Interface Web
+# 🖼️ Interface Web
 ## Version Flask
 - Formulaires pour :
 - Ajouter des rappels
@@ -225,7 +225,7 @@ else:
 
 ---
 
-## 🎓 Avantages Pédagogiques
+# 🎓 Avantages Pédagogiques
 
 * Apprentissage de la POO en Python
 * Utilisation d’une base SQLite pour la persistance
