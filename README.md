@@ -22,7 +22,7 @@ Un assistant personnel intelligent 100% Python conçu pour aider les étudiants 
 
 ## 🏗️ Architecture du projet
 
-```
+
 
 ┌────────────────────┐      ┌────────────────────┐
 │    Interface Web   │◄────►│   Agent Intelligent │
@@ -34,13 +34,9 @@ Un assistant personnel intelligent 100% Python conçu pour aider les étudiants 
 │    Mémoire (POO)   │      │    Base SQLite     │
 └────────────────────┘      └────────────────────┘
 
-```
 
----
 
 ## 📁 Structure du projet
-
-```
 
 studybuddy/
 ├── agent.py                 # Classe Agent (logique principale)
@@ -54,9 +50,6 @@ studybuddy/
 ├── studybuddy.db           # Base de données SQLite (auto-créée)
 └── README.md               # Documentation du projet
 
-````
-
----
 
 ## 🔧 Fonctionnalités principales
 
@@ -136,7 +129,17 @@ if __name__ == "__main__":
 
 ---
 
-## 🔹 Version Streamlit
+## 🖼️ Interface Web
+## Version Flask
+- Formulaires pour :
+- Ajouter des rappels
+- Ajouter des événements
+- Poser une question à l’agent
+- Affichage dynamique de tous les événements et rappels
+## Version Streamlit
+- Interface plus moderne avec widgets
+- Interaction directe avec la classe Agent
+- Résultats affichés en temps réel (via st.markdown, st.success, etc.)
 
 ```python
 import streamlit as st
@@ -225,10 +228,6 @@ else:
 
 ---
 
-## 🔗 Dépôt GitHub
-
-Le projet complet est disponible ici :
-👉 [https://github.com/zakariadjellouli/Projet-ia-studybuddy](https://github.com/zakariadjellouli/Projet-ia-studybuddy)
 
 
 
