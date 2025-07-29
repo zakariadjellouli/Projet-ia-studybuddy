@@ -1,8 +1,5 @@
 # Projet-ia-studybuddy
 📁 Structure du projet
-plaintext
-Copier
-Modifier
 studybuddy/
 ├── agent.py                  # Classe Agent (logique principale)
 ├── memoire.py                # Classe Mémoire (accès aux données)
